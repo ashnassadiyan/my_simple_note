@@ -56,7 +56,7 @@ class _ItemNoteState extends State<ItemNote> {
       secondaryBackground: _swipeActionRight(),
       confirmDismiss: (direction) async {
         if (direction == DismissDirection.endToStart) {
-          final isConfirmed = await _showConfirmationDialog(context, "Delete", "Are you sure you want to delete this note?");
+          final isConfirmed = await showConfirmationDialog(context, "Delete", "Are you sure you want to delete this note?");
           if (isConfirmed != null && isConfirmed) {
             deleteNote(widget.id);
           }
@@ -143,7 +143,7 @@ class _ItemNoteState extends State<ItemNote> {
     );
   }
 
-  Future<bool?> _showConfirmationDialog(BuildContext context, String action, String message) {
+  Future<bool?> showConfirmationDialog(BuildContext context, String action, String message) {
     return showDialog<bool>(
       context: context,
       builder: (BuildContext context) {
